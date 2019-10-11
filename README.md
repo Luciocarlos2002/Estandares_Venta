@@ -1,20 +1,25 @@
-##Estandares_Venta
-Base de datos
-1) El nombre de la base de datos debe ser consistente y bien definido con letras mayúsculas, ejemplo: VENTA.
-2) Definir el charset de la base de datos a fin que permita la compatibilidad con caracteres tales como: ñ, á, etc. Por ejemplo: UTF-8 (para el motor de base de datos MySql).
-##Tablas
-1) Todos los script referente a tablas deben estar dentro de una carpeta llamada Tables.
-2) El nombre de las tablas deben ser descriptivo, no importa que tan largos sean siempre y cuando lo soporte el motor de base de datos respectivo.
-3) Los nombres de tabla no deben tener espacios en blanco, tildes, ñ ni ningún otro caracter inusual.
-4) Nombres de las tablas en mayúscula y en singular ejem: PERSONA. 
-5) Si el nombre es compuesto se debe separar por un guión bajo, ejemplo: PERSONA_DETALLE.
-6) La tabla y/o campos deben tener una breve descripción respectiva utilizando comentarios.
-7) Para denominar el nombre del campo de una tabla, tener en cuenta: 
-    a) Las 3 a 4 primeras letras de atributo más 3 a 4 primeras letras del nombre de la tabla, ejemplo: CODPER (Código de la Persona)
-8) En casos donde la tabla sea un detalle o su nombre sea compuesto, se utilizará las 3 primeras letras de cada atributo, ejemplo: CODPERDET (Código de la tabla PERSONA_DETALLE).
-9) Todas las tablas deben de tener un Primary Key (PK) como mínimo y deben de ser los primeros campos de la tabla, ser únicos e irrepetibles.
-10) Tener en cuenta para los campos que son claves principales:
-    a) Se sugiere por ID para los auto-incrementables desde la BD.
-    b) Poner NUM cuando el PK es un atributo numérico.
-    c) COD para aquellos que se genere por algún medio de concatenación, char, etc.
-11) Todas las llaves Foráneas (FK) deben tener el mismo nombre, tipo de dato y longitud que la llave primaria a la que hace referencia.
+# Base de datos
+- El nombre de la base de datos será VENTA_CURSO.
+# Estructura y descripción de tablas
+Esta base de datos estará conformada por las siguientes tablas:
+- PERSONA: contiene los datos generales de toda persona, además especifica si es estudiante o empleado.
+- EMPLEADO: contiene la información necesaria del empleado.
+- DEPARTAMENTO: contiene toda la información de los departamentos en los que trabajan los empleados.
+- CURSO: contiene toda la información referente a los cursos que se ofertan.
+- OFERTA: contiene las ofertas de cursos con su respectiva fecha de inicio y profesor. asignado. 
+- NIVEL_SUELDO: contiene los niveles o grados de sueldo que puede alcanzar el empleado de acuerdo a su productividad.
+- INSCRIPCION: contiene todas las inscripciones realizadas a los cursos ofertados y que son atendidos por los empleados del departamento de ventas.
+- HISTORICO: contiene la información histórica de los años trabajados de un empleado dentro de la empresa.
+Para acceder y visualizar la estructura de cada una hacer clic aquí.
+# Relaciones entre tablas
+Para establecer las relaciones debe tener en cuenta lo siguiente:
+1. Un empleado puede ser Jefe de ninguno, uno o muchos empleados.
+2. Un departamento está conformado por ninguno, uno o muchos empleados.
+3. En un nivel o grado de sueldo pueden estar comprendidos 0, 1 ó muchos sueldos de los empleados.
+4. Un curso puede estar presente en ninguna, una o muchas ofertas.
+5. Un profesor puede dictar ninguno, uno o más cursos.
+6. Una persona puede estar registrado como empleado ninguna, una o muchas veces.
+7. Un empleado del departamento de ventas puede registrar la inscripción de ninguno, uno o muchos cursos.
+8. Un persona de tipo de estudiante se puede registrar ninguna, una o muchas veces en los cursos.
+9. Una oferta de curso puede estar en 0, 1 o muchas veces inscripciones.
+10. Un empleado puede ser ascendido o irse de la empresa ninguna, una o muchas veces
